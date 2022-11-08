@@ -33,7 +33,7 @@
 	<h2 class="titre1">Qu'est ce que e-Music ?</h2>
 	<br>
 	<p class="block1">e-Music est un système de <strong>gestion des inscriptions et paiements</strong> aux différents cours de musique, qu’ils soient collectifs ou
-individuels.<br> Et permet également d'enregistrer les <strong>prêts des instruments</strong> ainsi que leur maintenance.</br>
+	individuels.<br> Et permet également d'enregistrer les <strong>prêts des instruments</strong> ainsi que leur maintenance.</br>
 		
 	</p>
 	</br>
