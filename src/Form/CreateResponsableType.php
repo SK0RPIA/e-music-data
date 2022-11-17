@@ -19,9 +19,9 @@ class CreateResponsableType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom', TextType::class, array('label' => 'Numéro de rue'))
-            ->add('prenom', TextType::class, array('label' => 'Numéro de rue'))
-            ->add('DateNaiss', DateTimeType::class, array('input' => 'datetime', 'widget' => 'single_text', 'required' => false, 'label' => 'Date de naissance', 'placeholder' => 'jj/mm/aaaa'));
+            ->add('nom', TextType::class, array('required' => true, 'label' => 'Nom '))
+            ->add('prenom', TextType::class, array('required' => true, 'label' => 'Prenom'))
+            ->add('DateNaiss', DateTimeType::class, array('input' => 'datetime', 'widget' => 'single_text', 'required' => true, 'label' => 'Date de naissance', 'placeholder' => 'jj/mm/aaaa'));
     }
 
     public function configureOptions(OptionsResolver $resolver): void

@@ -19,7 +19,7 @@ class ResponsableController extends AbstractController
         ]);
     }
 
-    public function ajouterEtudiant(Request $request, ManagerRegistry $doctrine)
+    public function addResponsable(Request $request, ManagerRegistry $doctrine)
     {
 
         $responsable = new Responsable();
