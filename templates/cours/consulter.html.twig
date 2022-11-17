@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Consultation Cours{% endblock %}
+
+{% block body %}
+
+
+   <head><h1> Le cours de a bien été créé !</h1> </head>
+<body>
+        <h3>Détails à propos du cours : {{cours.libelle}}</h3>
+<p>
+    <table>
+        <tr><td>Intitulé du cour : </td><td>{{cours.libelle}}</td></tr>
+        <tr><td>Age minimum d'inscription : </td><td>{{cours.ageMini}}</td>
+        <tr><td>Age maximum d'inscription : </td><td>{{cours.ageMaxi}}</td>
+        <tr><td>Jour(s) du cour : 
+
+        {% for j in cours.jour %}
+        
+            {{j.libelle}}
+
+        {% endfor %}
+        </td></tr>
+        <tr><td>Le cours débutera à : </td><td>{{cours.heureDebut|date("h:i A")}}</td>
+        <tr><td>Le cours se terminera à : </td><td>{{cours.heureFin|date("h:i A")}}</td>
+        <tr><td>Professeur : </td><td>{{cours.professeur.nom}}{{cours.professeur.prenom}}</td></tr>
+        <tr><td>Instrument : </td><td>{{cours.instrument.intitule}}</td></tr>
+        <tr><td>Nombre de places : </td><td>{{cours.nbplaces}}</td></tr>
+        <tr><td>Type de cours : </td><td>{{cours.typeDeCours.libelle}}</td></tr>
+
+</div>
+{% endblock %}
