@@ -17,5 +17,4 @@ class Responsable extends User
     {
         return $this->id;
     }
-
 }
