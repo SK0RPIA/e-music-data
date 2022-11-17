@@ -1,7 +1,3 @@
-# For a symfony application to work properly, you MUST store this .htaccess in
-# the same directory as your front controller, index.php, in a standard symfony
-# web application is under the "public" project subdirectory.
-
 # Use the front controller as index file.
 DirectoryIndex index.php
 
