@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\Instruments;
+use App\Entity\Instrument;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Instruments>
+ * @extends ServiceEntityRepository<Instrument>
  *
- * @method Instruments|null find($id, $lockMode = null, $lockVersion = null)
- * @method Instruments|null findOneBy(array $criteria, array $orderBy = null)
- * @method Instruments[]    findAll()
- * @method Instruments[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Instrument|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Instrument|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Instrument[]    findAll()
+ * @method Instrument[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class InstrumentsRepository extends ServiceEntityRepository
+class InstrumentRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Instruments::class);
+        parent::__construct($registry, Instrument::class);
     }
 
-    public function save(Instruments $entity, bool $flush = false): void
+    public function save(Instrument $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class InstrumentsRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Instruments $entity, bool $flush = false): void
+    public function remove(Instrument $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class InstrumentsRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Instruments[] Returns an array of Instruments objects
+//     * @return Instrument[] Returns an array of Instrument objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class InstrumentsRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Instruments
+//    public function findOneBySomeField($value): ?Instrument
 //    {
 //        return $this->createQueryBuilder('i')
 //            ->andWhere('i.exampleField = :val')
