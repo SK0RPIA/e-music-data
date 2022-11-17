@@ -1,19 +1,393 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bienvenue sur -music-data</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Google fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700&amp;display=swap">
+    <!-- Modal Video-->
+    <link rel="stylesheet" href="vendor/modal-video/css/modal-video.min.css">
+    <!-- Leaflet-->
+    <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+    <!-- Swiper slider-->
+    <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.png">
         {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
+      <header class="header">
+      <div class="top-bar bg-dark text-white">
+        <div class="container">
+          <div class="row gx-0">
+            <div class="col-lg-4 bg-primary py-2 text-center text-lg-start d-none d-lg-flex align-items-center">
+          </div>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-light py-3 bg-white shadow-sm">
+        <div class="container"><a class="navbar-brand" href="index.html"><img src="img/logo.svg" alt="" width="200"></a>
+          <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+              <li class="nav-item mx-2">
+                <!-- Link--><a class="nav-link text-uppercase active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item mx-2">
+                <!-- Link--><a class="nav-link text-uppercase" href="about.html">About</a>
+              </li>
+              <li class="nav-item mx-2">
+                <!-- Link--><a class="nav-link text-uppercase" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item ms-2 dropdown"><a class="nav-link text-uppercase dropdown-toggle pe-0" id="navbarDropdownMenuLink" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                <div class="dropdown-menu mt-lg-4 text-sm" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="index.html">Home</a><a class="dropdown-item" href="about.html">About</a><a class="dropdown-item" href="contact.html">Contact                </a></div>
+              </li>
+              <li class="nav-item ms-lg-3 ps-lg-3"><a class="btn btn-outline-primary btn-sm" href="contact.html">Request a quote</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>       
+       
+        
         {% endblock %}
 
         {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
+          
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+         <section>
+      <div class="swiper hero-slider">
+        <div class="swiper-wrapper">
+          <!-- Hero Slide-->
+          <div class="swiper-slide hero-slide bg-size bg-center py-5" style="background: url(img/hero-banner-1.jpg)">
+            <div class="container text-white py-5 index-forward">
+              <div class="row">
+                <div class="col-lg-7">
+                  <h1>Choose right solution for your business</h1>
+                  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                  <ul class="list-inline">
+                    <li class="list-inline-item me-0"><a class="btn btn-primary" href="#!">Read More</a></li>
+                    <li class="list-inline-item"></li><a class="btn btn-outline-light" href="#!">Our company</a>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Hero Slide-->
+          <div class="swiper-slide hero-slide bg-size bg-center py-5" style="background: url(img/hero-banner-2.jpg)">
+            <div class="container text-white py-5 index-forward">
+              <div class="row">
+                <div class="col-lg-7">
+                  <h1>We will help you to grow your business</h1>
+                  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                  <ul class="list-inline">
+                    <li class="list-inline-item me-0"><a class="btn btn-primary" href="#!">Read More</a></li>
+                    <li class="list-inline-item"></li><a class="btn btn-outline-light" href="#!">Our company</a>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Hero Slide-->
+          <div class="swiper-slide hero-slide bg-size bg-center py-5" style="background: url(img/hero-banner-3.jpg)">
+            <div class="container text-white py-5 index-forward">
+              <div class="row">
+                <div class="col-lg-7">
+                  <h1>You always get the best guidance</h1>
+                  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                  <ul class="list-inline">
+                    <li class="list-inline-item me-0"><a class="btn btn-primary" href="#!">Read More</a></li>
+                    <li class="list-inline-item"></li><a class="btn btn-outline-light" href="#!">Our company</a>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next swiper-nav-custom d-none d-lg-block"></div>
+        <div class="swiper-button-prev swiper-nav-custom d-none d-lg-block"></div>
+        <div class="swiper-pagination py-3 d-block d-lg-none"></div>
+      </div>
+    </section>
+    <!-- Features Section -->
+    <section class="py-5 bg-light">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-lg-6 order-2 order-lg-1">
+            <p class="h6 mb-1 text-uppercase text-primary mb-3">Our main features</p>
+            <h2 class="mb-4">We Work With You To Address Your Most Critical Business Priorities</h2>
+            <p class="text-sm text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <ul class="list-check list-unstyled row px-3 mb-4 gy-2">
+              <li class="text-sm text-muted col-lg-6">Acquire live chat enables sales</li>
+              <li class="text-sm text-muted col-lg-6">Learn from customer feedback</li>
+              <li class="text-sm text-muted col-lg-6">Engage - marketing automation</li>
+              <li class="text-sm text-muted col-lg-6">Support -customer support</li>
+              <li class="text-sm text-muted col-lg-6">Acquire live chat enables sales</li>
+              <li class="text-sm text-muted col-lg-6">Learn from customer feedback</li>
+            </ul>
+            <ul class="list-inline py-4 border-top border-bottom d-flex align-items-center">
+              <li class="list-inline-item pr-4 mr-0"><img src="img/about-sign.png" alt="" width="80"></li>
+              <li class="list-inline-item px-4 mr-0 border-left">
+                <h5 class="mb-0">Jack Foxx</h5>
+                <p class="small font-weight-normal text-muted mb-0">Chairnan and founder </p>
+              </li>
+              <li class="list-inline-item pl-4 border-left">
+                <h5 class="mb-0">+420 754 6545 6564</h5>
+                <p class="small font-weight-normal text-muted mb-0">Call to ask any question</p>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-5 ms-auto mb-4 mb-lg-0 order-1 order-lg-2">
+            <div class="p-2 border"><img class="img-fluid" src="img/about-img.jpg" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section -->
+    <section class="py-5">
+      <div class="container py-5 text-center">
+        <header class="mb-5">
+          <div class="row">
+            <div class="col-lg-7 mx-auto">
+              <p class="h6 text-uppercase text-primary mb-0">Our services</p>
+              <h2>We Creating Solutions For Your Organization</h2>
+            </div>
+          </div>
+        </header>
+        <div class="row align-items-stretch gy-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="px-4 py-5 border border-2 border-dash h-100">
+              <svg class="svg-icon mb-4 text-primary svg-icon-light svg-icon-big">
+                <use xlink:href="#laptop-screen-1"> </use>
+              </svg>
+              <h3 class="h5">Business Finance Strategy</h3>
+              <p class="text-sm mb-0 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="px-4 py-5 border border-2 border-dash h-100">
+              <svg class="svg-icon mb-4 text-primary svg-icon-light svg-icon-big">
+                <use xlink:href="#quality-1"> </use>
+              </svg>
+              <h3 class="h5">Portfolio &amp; Resource Allocation</h3>
+              <p class="text-sm mb-0 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="px-4 py-5 border border-2 border-dash h-100">
+              <svg class="svg-icon mb-4 text-primary svg-icon-light svg-icon-big">
+                <use xlink:href="#survey-1"> </use>
+              </svg>
+              <h3 class="h5">Organization &amp; Decision Process</h3>
+              <p class="text-sm mb-0 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="px-4 py-5 border border-2 border-dash h-100">
+              <svg class="svg-icon mb-4 text-primary svg-icon-light svg-icon-big">
+                <use xlink:href="#pie-chart-1"> </use>
+              </svg>
+              <h3 class="h5">Decision &amp; Risk Analytic</h3>
+              <p class="text-sm mb-0 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="px-4 py-5 border border-2 border-dash h-100">
+              <svg class="svg-icon mb-4 text-primary svg-icon-light svg-icon-big">
+                <use xlink:href="#pay-1"> </use>
+              </svg>
+              <h3 class="h5">Banking &amp; Capital Markets</h3>
+              <p class="text-sm mb-0 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="px-4 py-5 border border-2 border-dash h-100">
+              <svg class="svg-icon mb-4 text-primary svg-icon-light svg-icon-big">
+                <use xlink:href="#stack-1"> </use>
+              </svg>
+              <h3 class="h5">Modern &amp; Tribe Workplace</h3>
+              <p class="text-sm mb-0 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Divider Section -->
+    <section class="bg-cover bg-center" style="background: url(img/hero-banner-2.jpg)">
+      <div class="primary-overlay py-5">
+        <div class="overlay-content">
+          <div class="container">
+            <div class="row align-items-center gy-4">
+              <div class="col-lg-7 text-center text-lg-start">
+                <h2 class="text-white mb-2">You Always Get the Best Guidance</h2>
+                <p class="text-white mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <div class="col-lg-3 ms-auto text-center text-lg-end"><a class="btn btn-outline-light" href="#!">Request a quote</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Features Section -->
+    <section class="py-5 bg-light">
+      <div class="container py-5">
+        <div class="row align-items-center gx-lg-0">
+          <div class="col-lg-5">
+            <div class="bg-primary pe-lg-3"><img class="img-fluid w-100" src="img/feature-img.jpg" alt=""></div>
+          </div>
+          <div class="col-lg-7">
+            <div class="p-4 p-md-5 shadow bg-white">
+              <p class="h6 mb-1 text-uppercase text-primary mb-3">Why choose us</p>
+              <h2 class="mb-5">We Provide Experts To Create A Great Value For Your Business</h2>
+              <div class="row">
+                <div class="col-lg-9">
+                  <ol class="list-numbers mb-0">
+                    <li class="mb-4">
+                      <h5>We modify whole system</h5>
+                      <p class="text-sm text-muted">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat. </p>
+                    </li>
+                    <li class="mb-4">
+                      <h5>Safeguard for Your Business</h5>
+                      <p class="text-sm text-muted">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat. </p>
+                    </li>
+                    <li class="mb-4">
+                      <h5>Beneficial Strategies</h5>
+                      <p class="text-sm text-muted">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat. </p>
+                    </li>
+                    <li>
+                      <h5>Build Solid Human Resource</h5>
+                      <p class="text-sm text-muted">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat. </p>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Video Section -->
+    <section class="bg-center bg-cover" style="background: url(img/hero-banner-3.jpg)">
+      <div class="dark-overlay py-5">
+        <div class="overlay-content text-white">
+          <div class="container py-5">
+            <header class="text-center">
+              <div class="row">
+                <div class="col-lg-9 mx-auto">
+                  <button class="video-btn mb-5" type="button" data-video-id="NOG3eus4ZSo"><i class="fas fa-play"></i></button>
+                  <p class="h6 mb-1 text-uppercase text-primary mb-3">We make a difference</p>
+                  <h2 class="h1 mb-5">The Best Solutions For Developing Your Business</h2><a class="btn btn-primary" href="#!">View more services</a>
+                </div>
+              </div>
+            </header>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials Section-->
+    <section class="py-5">
+      <div class="container py-5">
+        <p class="h6 mb-1 text-uppercase text-primary mb-3">Our clients say</p>
+        <div class="row mb-5">
+          <div class="col-lg-5">
+            <h2 class="mb-5">The Best Solutions For Developing Your Business</h2>
+          </div>
+          <div class="col-lg-7">
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+        <div class="swiper testimonials-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide p-3">
+              <div class="testimonial p-5 shadow-sm mb-5">
+                <div class="d-flex align-items-center mb-4">
+                  <div class="testimonial-img flex-shrink-0"><img class="img-fluid rounded-circle" src="img/person-1.jpg" alt=""></div>
+                  <div class="ms-4">
+                    <h5 class="mb-0">Rodel Colez</h5>
+                    <p class="small text-muted mb-1">Businessman</p>
+                    <ul class="small list-inline text-primary mb-0">
+                      <li class="list-inline-item m-0"><i class="fas fa-star"></i></li>
+                      <li class="list-inline-item m-0 1"><i class="fas fa-star"></i></li>
+                      <li class="list-inline-item m-0 2"><i class="fas fa-star"></i></li>
+                      <li class="list-inline-item m-0 3"><i class="fas fa-star"></i></li>
+                      <li class="list-inline-item m-0 4"><i class="fas fa-star"></i></li>
+                    </ul>
+                  </div>
+                </div>
+                <p class="text-muted text-sm mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   </p>
+              </div>
+            </div>
+            <div class="swiper-slide p-3">
+              <div class="testimonial p-5 shadow-sm mb-5">
+                <div class="d-flex align-items-center mb-4">
+                  <div class="testimonial-img flex-shrink-0"><img class="img-fluid rounded-circle" src="img/person-2.jpg" alt=""></div>
+                  <div class="ms-4">
+                    <h5 class="mb-0">Mark Huff</h5>
+                    <p class="small text-muted mb-1">Businessman</p>
+                    <ul class="small list-inline text-primary mb-0">
+                      <li class="list-inline-item m-0"><i class="fas fa-star"></i></li>
+                      <li class="list-inline-item m-0 1"><i class="fas fa-star"></i></li>
+                      <li class="list-inline-item m-0 2"><i class="fas fa-star"></i></li>
+                      <li class="list-inline-item m-0 3"><i class="fas fa-star"></i></li>
+                      <li class="list-inline-item m-0 4"><i class="fas fa-star"></i></li>
+                    </ul>
+                  </div>
+                </div>
+                <p class="text-muted text-sm mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   </p>
+              </div>
+            </div>
+            <div class="swiper-slide p-3">
+              <div class="testimonial p-5 shadow-sm mb-5">
+                <div class="d-flex align-items-center mb-4">
+                  <div class="testimonial-img flex-shrink-0"><img class="img-fluid rounded-circle" src="img/person-1.jpg" alt=""></div>
+                  <div class="ms-4">
+                    <h5 class="mb-0">Rodel Colez</h5>
+                    <p class="small text-muted mb-1">Businessman</p>
+                    <ul class="small list-inline text-primary mb-0">
+                      <li class="list-inline-item m-0"><i class="fas fa-star"></i></li>
+                      <li class="list-inline-item m-0 1"><i class="fas fa-star"></i></li>
+                      <li class="list-inline-item m-0 2"><i class="fas fa-star"></i></li>
+                      <li class="list-inline-item m-0 3"><i class="fas fa-star"></i></li>
+                      <li class="list-inline-item m-0 4"><i class="fas fa-star"></i></li>
+                    </ul>
+                  </div>
+                </div>
+                <p class="text-muted text-sm mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   </p>
+              </div>
+            </div>
+            <div class="swiper-slide p-3">
+              <div class="testimonial p-5 shadow-sm mb-5">
+                <div class="d-flex align-items-center mb-4">
+                  <div class="testimonial-img flex-shrink-0"><img class="img-fluid rounded-circle" src="img/person-1.jpg" alt=""></div>
+                  <div class="ms-4">
+                    <h5 class="mb-0">Rodel Colez</h5>
+                    <p class="small text-muted mb-1">Businessman</p>
+                    <ul class="small list-inline text-primary mb-0">
+                      <li class="list-inline-item m-0"><i class="fas fa-star"></i></li>
+                      <li class="list-inline-item m-0 1"><i class="fas fa-star"></i></li>
+                      <li class="list-inline-item m-0 2"><i class="fas fa-star"></i></li>
+                      <li class="list-inline-item m-0 3"><i class="fas fa-star"></i></li>
+                      <li class="list-inline-item m-0 4"><i class="fas fa-star"></i></li>
+                    </ul>
+                  </div>
+                </div>
+                <p class="text-muted text-sm mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination">                               </div>
+        </div>
+      </div>
+    </section>
+        
+        {% endblock %}
     </body>
 </html>
