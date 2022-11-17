@@ -5,8 +5,17 @@
 {% block body %}
 
 
-    <h1>Consultation du cours créé :</h1>
-
+   <head><h1> Le cours de a bien été créé !</h1> </head>
+<body>
+        <h3>Détails à propos du cours {{cours.libelle}}</h3>
+<p>
+    <table>
+        <tr><td>Intitulé du cour : </td><td>{{cours.libelle}}</td></tr>
+        <tr><td>Age minimum d'inscription : </td><td>{{cours.ageMini}}</td>
+        <tr><td>Age maximum d'inscription : </td><td>{{cours.ageMaxi}}</td>
+        <tr><td>Le cours débutera à : </td><td>{{cours.heureDebut|date("h:i A")}}</td>
+        <tr><td>Le cours se terminera à : </td><td>{{cours.heureFin|date("h:i A")}}</td>
+        <tr><td>Instrument : </td><td>{{cours.instrument.intitule}}</td></tr>
 
 </div>
 {% endblock %}

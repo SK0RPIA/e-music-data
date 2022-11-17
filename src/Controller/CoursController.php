@@ -42,7 +42,6 @@ class CoursController extends AbstractController
     public function consulterCours(ManagerRegistry $doctrine,$idCours): Response
     {
         $cours = $doctrine ->getRepository (Cours :: class) -> find ($idCours);
-        return $this->render('cours/consulter.html.twig',[
-            'cours' => $cours,]);
+        return $this->render('cours/consulter.html.twig',['cours' => $cours,]);
     }
 }
