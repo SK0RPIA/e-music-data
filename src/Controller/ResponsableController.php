@@ -19,6 +19,7 @@ class ResponsableController extends AbstractController
         ]);
     }
 
+    #[Route('/register/responsable', name: 'app_addresponsable')]
     public function addResponsable(Request $request, ManagerRegistry $doctrine)
     {
 

@@ -1,6 +1,3 @@
 controllers:
     resource: ../src/Controller/
     type: attribute
-ajouterResponsable:
-    path: /register/responsable
-    controller: App\Controller\ResponsableController::addResponsable

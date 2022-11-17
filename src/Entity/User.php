@@ -33,9 +33,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(nullable: true)]
     private ?bool $isEmailValidate = null;
 
-    #[ORM\Column(type: 'boolean')]
-    private $isVerified = false;
-
     #[ORM\Column(length: 32)]
     private ?string $Nom = null;
 
@@ -124,18 +121,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsEmailValidate(?bool $isEmailValidate): self
     {
         $this->isEmailValidate = $isEmailValidate;
-
-        return $this;
-    }
-
-    public function isVerified(): bool
-    {
-        return $this->isVerified;
-    }
-
-    public function setIsVerified(bool $isVerified): self
-    {
-        $this->isVerified = $isVerified;
 
         return $this;
     }
