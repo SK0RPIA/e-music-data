@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Directory | Bootstrap 5 listing template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Choices CSS-->
+    <link rel="stylesheet" href="vendor/choices.js/public/assets/styles/choices.min.css">
+    <!-- Swiper slider-->
+    <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css">
+    <!-- Google fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700&amp;display=swap">
+    <!-- Lightbox-->
+    <link rel="stylesheet" href="vendor/glightbox/css/glightbox.min.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.png">
+  </head>
+  <body>
+    <!-- navbar-->
+    <header class="header">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 py-lg-2">
+        <div class="container"><a class="navbar-brand py-3 d-flex align-items-center" href="index.html"><img src="img/logo.svg" alt="" width="30"><span class="text-uppercase text-small fw-bold text-dark ms-2 mb-0">Listings</span></a>
+          <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                    <!-- Navbar link--><a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                    <!-- Navbar link--><a class="nav-link" href="category.html">Category</a>
+              </li>
+              <li class="nav-item">
+                    <!-- Navbar link--><a class="nav-link" href="detail.html">Detail</a>
+              </li>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="pages" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                <div class="dropdown-menu mt-lg-3 shadow-sm"><a class="dropdown-item" href="index.html">Home</a><a class="dropdown-item" href="category.html">Category</a><a class="dropdown-item" href="detail.html">Detail</a></div>
+              </li>
+              <li class="nav-item ms-lg-2 py-2 py-lg-0"><a class="btn btn-primary" href="#listingModal" data-bs-toggle="modal">Add listing</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!--  Modal -->
+    <div class="modal fade" id="listingModal" tabindex="-1" role="dialog" aria-labelledby="listingModal" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header px-lg-5">
+            <h5 class="modal-title" id="listingModalLabel">Add Listing</h5>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body px-lg-5">
+            <form action="#!">
+              <div class="row gy-3">
+                <div class="col-lg-6">
+                  <label class="form-label" for="fullName">Full name</label>
+                  <input class="form-control" id="fullName" type="text" name="fullname" placeholder="Your full name">
+                </div>
+                <div class="col-lg-6">
+                  <label class="form-label" for="email">Email Address</label>
+                  <input class="form-control" id="email" type="email" name="email" placeholder="Your email address">
+                </div>
+                <div class="col-lg-6">
+                  <label class="form-label" for="fullName">Listing Type</label>
+                  <select class="choices" data-customclass="form-control">
+                    <option value>Choose listing type</option>
+                    <option value="tool">Tool</option>
+                    <option value="resource">Resource</option>
+                  </select>
+                </div>
+                <div class="col-lg-6">
+                  <label class="form-label" for="istingTitle">Listing title</label>
+                  <input class="form-control" id="istingTitle" type="text" name="listing-title" placeholder="Title of your title">
+                </div>
+                <div class="col-lg-6">
+                  <label class="form-label" for="listingUrl">Listing URL</label>
+                  <input class="form-control" id="listingUrl" type="text" name="listing-url" placeholder="Listing website url">
+                </div>
+                <div class="col-lg-6">
+                  <label class="form-label" for="listingCategory">Listing category</label>
+                  <select class="choices" data-customclass="form-control">
+                    <option value>Choose category</option>
+                    <option value="marketing">Marketing </option>
+                    <option value="idea generation">Idea generation </option>
+                    <option value="design">Design </option>
+                    <option value="naming">Naming </option>
+                    <option value="domain names">Domain names </option>
+                    <option value="sales">Sales </option>
+                    <option value="finance">Finance </option>
+                    <option value="project management">Project management </option>
+                    <option value="hosting">Hosting </option>
+                    <option value="social tools">Social tools </option>
+                  </select>
+                </div>
+                <div class="col-lg-12">
+                  <label class="form-label" for="listingDescription">Listing description</label>
+                  <textarea class="form-control" id="listingDescription" name="listing-description" rows="5" placeholder="Add a small brief about your listing."></textarea>
+                </div>
+                <div class="col-lg-6 mb-lg-0">
+                  <label class="form-label" for="listingThumb">Listing thumbnail</label>
+                  <input class="form-control" id="listingThumb" type="file" name="listing-thumb">
+                </div>
+                <div class="col-lg-6 mb-lg-0">
+                  <label class="form-label" for="listingCover">Listing cover</label>
+                  <input class="form-control" id="listingCover" type="file" name="listing-cover">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer justify-content-start px-lg-5">
+            <button class="btn btn-primary" type="submit">Submit listing</button>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container py-5">
+      <h1>Bootstrap(ious) 4 Boilerplate</h1>
+      <p>This is a sample content.</p>
+      <div class="jumbotron">
+        <h1>Kitchen Sink</h1>
+        <p>A quick preview of everything Bootstrap has to offer.</p>
+        <p><a class="btn btn-primary btn-large" href="#!">Learn more »</a> <a class="btn btn-outline-primary btn-large" href="#!">Learn more »</a></p>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card mb-4" id="headings">
+            <div class="card-header">Headings</div>
+            <div class="card-body">
+              <h1>This is an h1 heading</h1>
+              <h2>This is an h2 heading</h2>
+              <h3>This is an h3 heading</h3>
+              <h4>This is an h4 heading</h4>
+              <h5>This is an h5 heading</h5>
+              <h6>This is an h6 heading</h6>
+            </div>
+          </div>
+          <div class="card mb-4">
+            <div class="card-header">Icons</div>
+            <div class="card-body">
+                  <svg class="svg-icon">
+                    <use xlink:href="#!speed-1"> </use>
+                  </svg>
+                  <svg class="svg-icon text-primary">
+                    <use xlink:href="#!muffin-1"> </use>
+                  </svg>
+                  <svg class="svg-icon text-muted">
+                    <use xlink:href="#!first-aid-kit-1"> </use>
+                  </svg><br>
+                  <svg class="svg-icon svg-icon-big svg-icon-light">
+                    <use xlink:href="#!sedan-1"> </use>
+                  </svg>
+            </div>
+          </div>
+          <div class="card mb-4" id="tables">
+            <div class="card-header">Tables</div>
+            <div class="card-body">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Tables</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Michael</td>
+                    <td>Are formatted like this</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Lucille</td>
+                    <td>Do you like them?</td>
+                  </tr>
+                  <tr class="table-success">
+                    <td>3</td>
+                    <td>Success</td>
+                    <td></td>
+                  </tr>
+                  <tr class="table-danger">
+                    <td>4</td>
+                    <td>Danger</td>
+                    <td></td>
+                  </tr>
+                  <tr class="table-warning">
+                    <td>5</td>
+                    <td>Warning</td>
+                    <td></td>
+                  </tr>
+                  <tr class="table-active">
+                    <td>6</td>
+                    <td>Active</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Tables</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-active">
+                    <td>1</td>
+                    <td>Michael</td>
+                    <td>This one is bordered and condensed</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Lucille</td>
+                    <td>Do you still like it?</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card mb-4" id="content-formatting">
+            <div class="card-header">Content Formatting</div>
+            <div class="card-body">
+              <p class="lead">This is a lead paragraph.</p>
+              <p>This is an <b>ordinary paragraph</b> that is <i>long enough</i> to wrap to 
+                <u>multiple lines</u> so that you can see how the line spacing looks.
+              </p>
+              <p class="text-muted">Muted color paragraph.</p>
+              <p class="text-warning">Warning color paragraph.</p>
+              <p class="text-danger">Danger color paragraph.</p>
+              <p class="text-info">Info color paragraph.</p>
+              <p class="text-primary">Primary color paragraph.</p>
+              <nav aria-label="...">
+                <ul class="pagination">
+                  <li class="page-item disabled"><span class="page-link">Previous</span></li>
+                  <li class="page-item"><a class="page-link" href="#!">1</a></li>
+                  <li class="page-item active"><span class="page-link">2<span class="visually-hidden">(current)</span></span></li>
+                  <li class="page-item"><a class="page-link" href="#!">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#!">Next</a></li>
+                </ul>
+              </nav>
+              <p><small>This is text in a <code>small</code> wrapper. <abbr title="No Big Deal">NBD</abbr>, right?</small></p>
+              <hr>
+              <address><strong>Twitter, Inc.</strong><br> 795 Folsom Ave, Suite 600<br> San Francisco, CA 94107<br><abbr title="Phone">P:</abbr> (123) 456-7890</address>
+              <address class="col-6"><strong>Full Name</strong><br><a href="mailto:#!">first.last@example.com</a></address>
+              <hr>
+              <blockquote>Here's what a blockquote looks like in Bootstrap.<small>Use <code>small</code> to identify the source.</small></blockquote>
+              <hr>
+              <div class="row">
+                <div class="col-xs-6">
+                  <ul>
+                    <li>Normal Unordered List</li>
+                    <li>Can Also Work
+                      <ul>
+                        <li>With Nested Children</li>
+                      </ul>
+                    </li>
+                    <li>Adds Bullets to Page</li>
+                  </ul>
+                </div>
+                <div class="col-xs-6">
+                  <ol>
+                    <li>Normal Ordered List</li>
+                    <li>Can Also Work
+                      <ol>
+                        <li>With Nested Children</li>
+                      </ol>
+                    </li>
+                    <li>Adds Bullets to Page</li>
+                  </ol>
+                </div>
+              </div>
+              <hr>
+              <pre>\nfunction preFormatting() {  // looks like this;  var something = somethingElse;  return true;}                        </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-4" id="forms">
+        <div class="card-header">Forms</div>
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label class="form-label" for="exampleInputEmail1">Email address</label>
+              <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp">
+              <div class="form-text" id="emailHelp">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="exampleInputPassword1">Password</label>
+              <input class="form-control" id="exampleInputPassword1" type="password">
+            </div>
+            <div class="mb-3 form-check">
+              <input class="form-check-input" id="exampleCheck1" type="checkbox">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </form>
+          <hr class="my-5">
+          <h4 class="mb-5">Horizontal form</h4>
+          <form class="row row-cols-lg-auto g-3 align-items-center">
+            <div class="col-12">
+              <input class="form-control" type="text" placeholder="Email">
+              <label class="visually-hidden" for="inlineFormInputGroupUsername2">Username</label>
+            </div>
+            <div class="col-12">
+              <div class="input-group"><span class="input-group-text">@</span>
+                <input class="form-control" id="inlineFormInputGroupUsername2" type="text">
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" id="inlineFormCheck" type="checkbox">
+                <label class="form-check-label" for="inlineFormCheck">Remember me</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+          </form>
+          <hr class="my-5">
+          <h4 class="mb-5">Horizontal form</h4>
+          <form>
+            <div class="row mb-3">
+              <label class="col-sm-2 col-form-label" for="inputEmail3">Email</label>
+              <div class="col-sm-10">
+                <input class="form-control" id="inputEmail3" type="email">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-2 col-form-label" for="inputPassword3">Password</label>
+              <div class="col-sm-10">
+                <input class="form-control" id="inputPassword3" type="password">
+              </div>
+            </div>
+            <fieldset>
+              <div class="row mb-3">
+                <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                <div class="col-sm-10">
+                  <div class="form-check">
+                    <input class="form-check-input" id="gridRadios1" type="radio" name="gridRadios" value="option1" checked>
+                    <label class="form-check-label" for="gridRadios1">
+                      First radio
+                      
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" id="gridRadios2" type="radio" name="gridRadios" value="option2">
+                    <label class="form-check-label" for="gridRadios2">
+                      Second radio
+                      
+                    </label>
+                  </div>
+                  <div class="form-check disabled">
+                    <input class="form-check-input" id="gridRadios3" type="radio" name="gridRadios" value="option3" disabled>
+                    <label class="form-check-label" for="gridRadios3">
+                      Third disabled radio
+                      
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div class="row mb-3">
+              <div class="col-form-label col-sm-2 pt-0">Checkbox</div>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" id="gridCheck1" type="checkbox">
+                  <label class="form-check-label" for="gridCheck1">
+                    Example checkbox
+                    
+                  </label>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Sign in</button>
+          </form>
+        </div>
+      </div>
+      <div class="card mb-4" id="buttons">
+        <div class="card-header">Buttons</div>
+        <div class="card-body">
+          <p>
+            <button class="btn btn-lg btn-secondary" type="button">Default Lg</button>
+            <button class="btn btn-lg btn-primary" type="button">Primary</button>
+            <button class="btn btn-lg btn-success" type="button">Success</button>
+            <button class="btn btn-lg btn-info" type="button">Info</button>
+            <button class="btn btn-lg btn-warning" type="button">Warning</button>
+            <button class="btn btn-lg btn-danger" type="button">Danger</button>
+            <button class="btn btn-lg btn-link" type="button">Link</button>
+          </p>
+          <p>
+            <button class="btn btn-secondary" type="button">Default </button>
+            <button class="btn btn-primary" type="button">Primary</button>
+            <button class="btn btn-success" type="button">Success</button>
+            <button class="btn btn-info" type="button">Info</button>
+            <button class="btn btn-warning" type="button">Warning</button>
+            <button class="btn btn-danger" type="button">Danger</button>
+            <button class="btn btn-link" type="button">Link</button>
+          </p>
+          <p>
+            <button class="btn btn-sm btn-secondary" type="button">Default Sm</button>
+            <button class="btn btn-sm btn-primary" type="button">Primary</button>
+            <button class="btn btn-sm btn-success" type="button">Success</button>
+            <button class="btn btn-sm btn-info" type="button">Info</button>
+            <button class="btn btn-sm btn-warning" type="button">Warning</button>
+            <button class="btn btn-sm btn-danger" type="button">Danger</button>
+            <button class="btn btn-sm btn-link" type="button">Link</button>
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">Button dropdown</div>
+        <div class="card-body">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown button</button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#!">Action</a><a class="dropdown-item" href="#!">Another action</a><a class="dropdown-item" href="#!">Something else here</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer style="background: #111;">
+      <div class="container py-4">
+        <div class="row py-5 gy-3">
+          <div class="col-md-4 col-sm-12">
+            <div class="d-flex align-items-center mb-3"><img src="img/logo-footer.svg" alt="" width="30"><span class="text-uppercase text-sm fw-bold text-white ms-2">Listings</span></div>
+            <p class="text-muted text-sm fw-light mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+            <ul class="list-inline mb-0 text-white">
+              <li class="list-inline-item"><a class="reset-anchor text-sm" href="#!"><i class="fab fa-facebook-f"></i></a></li>
+              <li class="list-inline-item"><a class="reset-anchor text-sm" href="#!"><i class="fab fa-twitter"></i></a></li>
+              <li class="list-inline-item"><a class="reset-anchor text-sm" href="#!"><i class="fab fa-pinterest"></i></a></li>
+              <li class="list-inline-item"><a class="reset-anchor text-sm" href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <h6 class="pt-2 text-white">Useful links</h6>
+            <div class="d-flex flex-wrap">
+              <ul class="list-unstyled text-muted mb-0 mb-3 me-4">
+                <li><a class="reset-anchor text-sm" href="#!">Tools</a></li>
+                <li><a class="reset-anchor text-sm" href="#!">Resources</a></li>
+                <li><a class="reset-anchor text-sm" href="#!">About us</a></li>
+                <li><a class="reset-anchor text-sm" href="#!">Write to us</a></li>
+              </ul>
+              <ul class="list-unstyled text-muted mb-0">
+                <li><a class="reset-anchor text-sm" href="#!">Privacy Policy </a></li>
+                <li><a class="reset-anchor text-sm" href="#!">Cookie Policy</a></li>
+                <li><a class="reset-anchor text-sm" href="#!">Terms &amp; Conditions</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <h6 class="pt-2 text-white">Newsletter</h6>
+            <p class="text-muted text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+            <form action="">
+              <div class="input-group">
+                <input class="form-control bg-none border-dark text-white" type="email" placeholder="Type your email address" aria-describedby="button-addon2">
+                <button class="btn btn-light" id="button-addon2" type="submit"><i class="fas fa-paper-plane"></i></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="copyrights py-4" style="background: #0e0e0e">
+        <div class="container">
+          <div class="row text-center gy-2">
+            <div class="col-sm-6 text-lg-start">
+              <p class="mb-0 text-muted mb-0 text-sm">&copy; 2021 All rights reserved.</p>
+            </div>
+            <div class="col-sm-6 text-md-end">
+              <p class="mb-0 text-muted mb-0 text-sm">Template designed by <a class="reset-anchor text-primary" href="https://bootstrapious.com/p/listings-bootstrap-directory-theme">Bootstrapious</a>.</p>
+              <!-- If you want to remove the backlink, please purchase the Attribution-Free License.-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- JavaScript files-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="vendor/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="js/front.js"></script>
+    <script>
+      // ------------------------------------------------------- //
+      //   Inject SVG Sprite - 
+      //   see more here 
+      //   https://css-tricks.com/ajaxing-svg-sprite/
+      // ------------------------------------------------------ //
+      function injectSvgSprite(path) {
+      
+          var ajax = new XMLHttpRequest();
+          ajax.open("GET", path, true);
+          ajax.send();
+          ajax.onload = function(e) {
+          var div = document.createElement("div");
+          div.className = 'd-none';
+          div.innerHTML = ajax.responseText;
+          document.body.insertBefore(div, document.body.childNodes[0]);
+          }
+      }
+      // this is set to BootstrapTemple website as you cannot 
+      // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
+      // while using file:// protocol
+      // pls don't forget to change to your domain :)
+      injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg'); 
+      
+    </script>
+    <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  </body>
+</html>
