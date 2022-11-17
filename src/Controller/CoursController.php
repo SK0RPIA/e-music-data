@@ -15,12 +15,12 @@ class CoursController extends AbstractController
     #[Route('/cours', name: 'app_cours')]
     public function index(): Response
     {
-        return $this->render('cours/index.html.twig', [
+        return $this->render('cours/ajouter.html.twig', [
             'controller_name' => 'CoursController',
         ]);
     }
 
-    
+
     #[Route('/ajoutercours', name: 'app_cours')]
     public function ajouterCours(Request $request, ManagerRegistry $doctrine)
     {
@@ -33,9 +33,16 @@ class CoursController extends AbstractController
             $entityManager = $doctrine->getManager();
             $entityManager->persist($cours);
             $entityManager->flush();
-            return $this->render('cours/index.html.twig', ['cours' => $cours,]);
+            return $this->render('cours/consulter.html.twig', ['cours' => $cours,]);
         } else {
-            return $this->render('cours/index.html.twig', array('form' => $form->createView(),));
+            return $this->render('cours/ajouter.html.twig', array('form' => $form->createView(),));
         }
+    }
+
+    public function consulterCours(ManagerRegistry $doctrine,$idCours): Response
+    {
+        $cours = $doctrine ->getRepository (Cours :: class) -> find ($idCours);
+        return $this->render('cours/consulter.html.twig',[
+            'cours' => $cours,]);
     }
 }
