@@ -13,6 +13,9 @@
 
   {{ form_start(registrationForm) }}
   {{ form_row(registrationForm.email) }}
+  {{ form_row(registrationForm.Nom) }}
+  {{ form_row(registrationForm.Prenom) }}
+  {{ form_row(registrationForm.DateNaiss) }}
   {{ form_row(registrationForm.plainPassword, { label: 'Password' }) }}
   {{ form_row(registrationForm.agreeTerms) }}
 
