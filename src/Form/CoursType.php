@@ -21,14 +21,14 @@ class CoursType extends AbstractType
             ->add('libelle',TextType::class)
             ->add('agemini',IntegerType::class)
             ->add('agemaxi',IntegerType::class)
-
+            ->add('instrument',EntityType::class,array('class'=>'App\Entity\Instrument','choice_label' => 'intitule'))
+            ->add('jour',EntityType::class,array('class'=>'App\Entity\Jour','choice_label' => 'libelle','multiple' => true))
             ->add('heureDebut',TimeType::class)
             ->add('heureFin',TimeType::class)
-            ->add('instrument',EntityType::class,array('class'=>'App\Entity\Instrument','choice_label' => 'intitule'))
-            ->add('professeur',EntityType::class,array('class'=>'App\Entity\Professeur','choice_label' => 'nom'))
-            ->add('jour',EntityType::class,array('class'=>'App\Entity\Jour','choice_label' => 'libelle','multiple' => true))
             ->add('typeDeCours',EntityType::class,array('class'=>'App\Entity\TypeDeCours','choice_label' => 'libelle'))
+            ->add('professeur',EntityType::class,array('class'=>'App\Entity\Professeur','choice_label' => 'nom'))
             ->add('nbplaces',IntegerType::class)
+            
             ->add('enregistrer', SubmitType::class, array('label' => 'Sauvegarder le cours'))
             ;
     }

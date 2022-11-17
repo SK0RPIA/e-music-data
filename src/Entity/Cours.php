@@ -43,7 +43,7 @@ class Cours
     private ?Professeur $professeur = null;
 
     #[ORM\ManyToMany(targetEntity: Jour::class, inversedBy: 'cours')]
-    private Collection $jour;
+    private Collection $jours;
 
     #[ORM\ManyToOne(inversedBy: 'cours')]
     #[ORM\JoinColumn(nullable: false)]
@@ -159,9 +159,9 @@ class Cours
     /**
      * @return Collection<int, Jour>
      */
-    public function getJour(): Collection
+    public function getJours(): Collection
     {
-        return $this->jour;
+        return $this->jours;
     }
 
     public function addJour(Jour $jour): self

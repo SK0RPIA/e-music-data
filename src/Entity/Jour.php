@@ -51,20 +51,20 @@ class Jour
         return $this->cours;
     }
 
-    public function addCour(Cours $cour): self
+    public function addCours(Cours $cours): self
     {
-        if (!$this->cours->contains($cour)) {
-            $this->cours->add($cour);
-            $cour->addJour($this);
+        if (!$this->cours->contains($cours)) {
+            $this->cours->add($cours);
+            $cours->addJour($this);
         }
 
         return $this;
     }
 
-    public function removeCour(Cours $cour): self
+    public function removeCours(Cours $cours): self
     {
-        if ($this->cours->removeElement($cour)) {
-            $cour->removeJour($this);
+        if ($this->cours->removeElement($cours)) {
+            $cours->removeJour($this);
         }
 
         return $this;
