@@ -7,7 +7,6 @@ use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Repository\CoursRepository;
 
 class IndexController extends AbstractController
 {
@@ -20,7 +19,7 @@ class IndexController extends AbstractController
         ]);
     }
 
-    #[Route('/cours', name: 'app_cours')]
+    #[Route('/index/cours', name: 'app_cours')]
     public function coursAction(ManagerRegistry $doctrine): Response
     {
         $cours=$doctrine ->getRepository (Cours :: class)->findAll();
