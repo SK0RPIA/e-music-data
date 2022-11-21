@@ -23,6 +23,7 @@
     <link rel="shortcut icon" href="img/logo.svg">
   </head>
   <body>
+  {% block body %}
     <!-- navbar-->
     <header class="header">
       <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 py-lg-2">
@@ -160,7 +161,7 @@
             <div class="card border-0 shadow h-100 hover-transition">
               <div class="card-body p-4 p-lg-5">
                 <div class="essential-tool-img mb-4 mx-auto" style="background: url(img/tool-2.png)"></div>
-                <h3 class="h5">Cours proposés</a></h3>
+                <a href="./cours"><h3 class="h5">Cours proposés</h3></a>
                 <p class="text-sm text-muted mb-0"><table class="customTable">
                   <thead>
                     <tr>
@@ -265,5 +266,6 @@
     
     <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  {% endblock %}
   </body>
 </html>
