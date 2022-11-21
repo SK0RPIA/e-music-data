@@ -14527,7 +14527,7 @@ nav.navbar .search-box form input {
   z-index: 999;
 }
 .login-page .info {
-  background: red;
+  background:red;
   color: #fff;
 }
 @media (min-width: 992px) {
