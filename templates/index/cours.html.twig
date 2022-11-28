@@ -1,0 +1,9 @@
+{% extends "index" %}
+{% block body  %}
+<ul>
+    {% for co in cours %}
+        <li>{{ co.libelle }}</li>
+    {% endfor %}
+
+</ul>
+{% endblock body%}

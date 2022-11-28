@@ -1,0 +1,15 @@
+------------------------------------------
+ CREDITS
+------------------------------------------
+
+    - Bootstrap 5    -    https://getbootstrap.com
+
+    - Font Awesome   -    https://fontawesome.com
+
+    - Orion Icons    -    https://orioniconlibrary.com/
+
+    - Swiper         -    https://swiperjs.com/
+
+    - gLightobx      -    https://biati-digital.github.io/glightbox/
+
+    - Choices.js     -    https://github.com/Choices-js/Choices         
