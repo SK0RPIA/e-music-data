@@ -15,4 +15,5 @@ class InscriptionController extends AbstractController
             'controller_name' => 'InscriptionController',
         ]);
     }
+    
 }
