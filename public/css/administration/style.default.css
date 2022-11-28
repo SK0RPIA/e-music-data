@@ -678,7 +678,7 @@ progress {
   }
 }
 .row {
-  --bs-gutter-x: 1.5rem;
+  --bs-gutter-x: 16rem;
   --bs-gutter-y: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3322,7 +3322,7 @@ textarea.form-control-lg {
   --bs-btn-font-size:1rem;
   --bs-btn-font-weight: 400;
   --bs-btn-line-height: 1.5;
-  --bs-btn-color: red;
+  --bs-btn-color: #212529;
   --bs-btn-bg: transparent;
   --bs-btn-border-width: 1px;
   --bs-btn-border-color: transparent;
@@ -3348,7 +3348,7 @@ textarea.form-control-lg {
   user-select: none;
   border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
   border-radius: var(--bs-btn-border-radius);
-  background-color: red;
+  background-color: var(--bs-btn-bg);
   -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -3403,7 +3403,7 @@ textarea.form-control-lg {
 
 .btn-primary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: red;
+  --bs-btn-bg: #796AEE;
   --bs-btn-border-color: #796AEE;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #675aca;
@@ -14014,11 +14014,11 @@ nav.side-navbar.shrinked .sidebar-header .title {
 }
 .sidebar-item.active > .sidebar-link {
   color: #fff;
-  border-left: 4px solid #3b25e6;
-  background: #796AEE;
+  border-left: 4px solid red;
+  background: red;
 }
 .sidebar-item.active > .sidebar-link:hover {
-  background: #796AEE;
+  background: red;
 }
 .sidebar-item li.active > .sidebar-link {
   color: #fff;
@@ -14060,8 +14060,8 @@ nav.side-navbar.shrinked .sidebar-header .title {
 }
 .sidebar-link:hover {
   color: #fff;
-  border-left: 4px solid #3b25e6;
-  background: #796AEE;
+  border-left: 4px solid red;
+  background: red;
 }
 .sidebar-link[data-bs-toggle=collapse]::before {
   display: block;
@@ -14510,6 +14510,7 @@ nav.navbar .search-box form input {
   content: "";
   display: block;
   z-index: -1;
+  background: url(../img/bg.jpg);
   background-size: cover;
   -webkit-filter: blur(10px);
   filter: blur(10px);
@@ -14527,7 +14528,7 @@ nav.navbar .search-box form input {
   z-index: 999;
 }
 .login-page .info {
-  background:red;
+  background: red;
   color: #fff;
 }
 @media (min-width: 992px) {
