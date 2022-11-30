@@ -24,31 +24,24 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
   </head>
   <body>
-  <div class="login-page">
-      <div class="container d-flex align-items-center position-relative py-5">
-        <div class="card shadow-sm w-100 rounded overflow-hidden bg-none">
-          <div class="card-body p-0">
-            <div class="row gx-0 align-items-stretch">
-              <!-- Logo & Information Panel-->
-              <div class="col-lg-6">
-                <div class="info d-flex justify-content-center flex-column p-4 h-100">
-                  <div class="py-5">
-                    <h1 class="display-6 fw-bold">Connexion</h1>
-                  </div>
-                </div>
-              </div>
+  {% block rouge %}
+  
+  {% endblock %}
+
   {% block body %}
+  
   {% if error %}
                     
 {% endif %}
   {% endblock %}
-     
+      
       <div class="text-center position-absolute bottom-0 start-0 w-100 z-index-20">
         <p class="text-white">Design by <a class="external" href="https://bootstrapious.com/p/admin-template">Bootstrapious</a>
           <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
         </p>
       </div>
     </div>
+   
     <!-- JavaScript files-->
     <script src="vendor/administration/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/administration/chart.js/Chart.min.js"></script>

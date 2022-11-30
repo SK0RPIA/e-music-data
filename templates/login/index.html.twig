@@ -4,13 +4,29 @@
 {% block title %}
  <title>Login</title> 
 {% endblock %}
+{% block rouge %}
+<div class="login-page">
+      <div class="container d-flex align-items-center position-relative py-5">
+        <div class="card shadow-sm w-100 rounded overflow-hidden bg-none">
+          <div class="card-body p-0">
+            <div class="row gx-0 align-items-stretch">
+              <!-- Logo & Information Panel-->
+              <div class="col-lg-6">
+                <div class="info d-flex justify-content-center flex-column p-4 h-100">
+                  <div class="py-5">
 
+                    <h1 class="display-6 fw-bold">Connexion</h1>
+                  </div>
+                </div>
+              </div>
+              {% endblock %}     
 {% block body %}
+
   {% if error %}
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
   {% endif %}
 
-                   
+              
            
               <!-- Form Panel    -->
               <div class="col-lg-6 bg-white">
