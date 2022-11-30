@@ -59,7 +59,7 @@ class RegistrationController extends AbstractController
 
 
             //TODO -> a changer par l'index // dashboard
-            return $this->redirectToRoute('app_login');
+            return $this->redirectToRoute('app_accueil_inscrit');
         }
 
         return $this->render('registration/register.html.twig', [
