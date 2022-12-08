@@ -1,5 +1,3 @@
-{% extends 'base.html.twig' %}
-
 {% block title %}
   Register
 {% endblock %}
@@ -11,14 +9,14 @@
 
   <h1>Register</h1>
 
-  {{ form_start(registrationForm) }}
-  {{ form_row(registrationForm.email) }}
-  {{ form_row(registrationForm.Nom) }}
-  {{ form_row(registrationForm.Prenom) }}
-  {{ form_row(registrationForm.DateNaiss) }}
-  {{ form_row(registrationForm.plainPassword, { label: 'Password' }) }}
-  {{ form_row(registrationForm.agreeTerms) }}
+  {{ form_start(form) }}
+  {{ form_row(form.email) }}
+  {{ form_row(form.Nom) }}
+  {{ form_row(form.Prenom) }}
+  {{ form_row(form.DateNaiss) }}
+  {{ form_row(form.plainPassword, { label: 'Password' }) }}
+  {{ form_row(form.agreeTerms) }}
 
   <button type="submit" class="btn">Register</button>
-  {{ form_end(registrationForm) }}
+  {{ form_end(form) }}
 {% endblock %}
