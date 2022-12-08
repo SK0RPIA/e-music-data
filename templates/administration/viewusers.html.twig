@@ -16,19 +16,19 @@
       background: #f5f5f5;
       padding: 2px 6px;
     }
-
-    .row{
-        display: flex;
-        flex-direction: row;
+    
+    .row {
+      display: flex;
+      flex-direction: row;
     }
   </style>
 
   <div class="example-wrapper">
     {% for user in users %}
       <div class="row">
-        <div class="text-black"> Nom : {{ user.nom }} ; </div>
-        <div class="text-black"> Prenom : {{ user.prenom }} ; </div>
-        <div class="text-black"> Mail : {{ user.email }}</div>
+        <div class="text-black">Nom : {{ user.nom }} ;</div>
+        <div class="text-black">Prenom : {{ user.prenom }} ;</div>
+        <div class="text-black">Mail : {{ user.email }}</div>
       </div>
     {% endfor %}
   </div>
