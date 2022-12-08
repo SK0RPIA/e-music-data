@@ -14,17 +14,20 @@ class IndexController extends AbstractController
     #[Route('/', name: 'app_index')]
     public function index(): Response
     {
-        return $this->render('index/index.html.twig', [
-            'controller_name' => 'IndexController',
-        ]);
+        if ($this->getUser()) {
+            return $this->render('index/index.html.twig', [
+                'user' => $this->getUser()
+            ]);
+        }
+        return $this->render('index/index.html.twig', []);
     }
 
     #[Route('/index/cours', name: 'app_cours')]
     public function coursAction(ManagerRegistry $doctrine): Response
     {
-        $cours=$doctrine ->getRepository (Cours :: class)->findAll();
+        $cours = $doctrine->getRepository(Cours::class)->findAll();
         return $this->render('index/cours.html.twig', [
-            'controller_name' => 'IndexController','cours'=>$cours
+            'controller_name' => 'IndexController', 'cours' => $cours
         ]);
     }
 }
