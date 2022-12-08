@@ -11,8 +11,11 @@ class AccueilInscritController extends AbstractController
     #[Route('/accueil', name: 'app_accueil_inscrit')]
     public function index(): Response
     {
-        return $this->render('accueil_inscrit/index.html.twig', [
-            'controller_name' => 'AccueilInscritController',
-        ]);
+        if ($this->getUser()) {
+            return $this->render('accueil_inscrit/index.html.twig', [
+                'user' => $this->getUser()
+            ]);
+        }
+        return $this->render('accueil_inscrit/index.html.twig', []);
     }
 }

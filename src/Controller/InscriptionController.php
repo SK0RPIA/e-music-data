@@ -43,7 +43,7 @@ class InscriptionController extends AbstractController
 
 
 
-            //TODO -> a changer par l'index // dashboard
+            //TODO -> a changer par l'index // accueil
             return $this->redirectToRoute('app_login');
         }
 

@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil Personne Inscrit{% endblock %}
+{% block title %}
+  Accueil Personne Inscrit
+{% endblock %}
 
-
-
+{% block body %}
+    <a href="{{ path('app_logout') }}">Se deconnecter</a>
+{% endblock %}
