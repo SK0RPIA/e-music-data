@@ -81,6 +81,12 @@
             <p class="h6 text-uppercase text-primary mb-3">Bienvenue sur </p>
             <h1 class="mb-5">E-music</h1>
             
+
+            {% if message is defined %}
+
+              <div class="text-uppercase text-primary mb-3">{{ message }}</div>
+
+            {% endif %}
           </div>
         </div>
       </div>
@@ -110,7 +116,7 @@
             <div class="card border-0 shadow h-100 hover-transition">
               <div class="card-body p-4 p-lg-5">
                 <div class="essential-tool-img mb-4 mx-auto" style="background: url(img/tool-1.png)"></div>
-                <h3 class="h5">Notre école</a></h3>
+                <h3 class="h5">Notre école</h3>
                 <p class="text-sm text-muted mb-0">Dotée de locaux de qualité, l’école de musique dispose d’une équipe pédagogique de seize enseignants
                   et propose au public différentes prestations d'enseignement musical.Cours particulier ou collectifs.</p>
               </div>
