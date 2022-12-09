@@ -95,6 +95,7 @@ class GestionnaireController extends AbstractController
     #[Route('/gestion/del-cour-user', name: 'app_gestionnairedel-cours-user')]
     public function delCoursUser(Request $request, EntityManagerInterface $entity): Response
     {
+        //functiun remove
         if (!$this->getUser() instanceof Gestionnaire) {
             return $this->redirectToRoute('app_index');
         }
@@ -121,6 +122,6 @@ class GestionnaireController extends AbstractController
         $form->handleRequest($request);
 
 
-        return $this->redirect('/gestion/view-user?email='. $user->getEmail());
+        return $this->redirect('/gestion/view-user?email=' . $user->getEmail());
     }
 }
