@@ -20,11 +20,22 @@
     .list-enfants {
       background: orange;
     }
+
+    .alert-msg{
+      background: red;
+      color: black;
+      font-size: 24;
+    }
   </style>
 
   <div class="example-wrapper">
     <span>Responsable : {{ user.prenom }} {{ user.nom }}</span>
 
+{% if message is defined %}
+<div class="alert-msg">
+{{message }}
+</div>
+{% endif %}
     <div class="">
       {{ form_start(form, {'attr': {'class': 'register-form py-5 w-100'}})}}
       {{ form_row(form.email, {'attr': {'class': 'input-material'}}) }}

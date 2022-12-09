@@ -49,6 +49,16 @@ class EnfantController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+
+            if (!$user->isValide()) {
+                return $this->render('enfant/add.html.twig', [
+                    'user' => $user,
+                    'form' => $form->createView(),
+                    'message' => "Le gestionnaire ne vous a pas valider !"
+
+                ]);
+            }
             // encode the plain password
             $enfant->setPassword(
                 $userPasswordHasher->hashPassword(
@@ -73,7 +83,7 @@ class EnfantController extends AbstractController
 
 
             //TODO -> a changer par l'index // accueil
-            return $this->redirectToRoute('app_accueil_inscrit');
+            return $this->redirectToRoute('app_listenfant');
         }
 
         return $this->render('enfant/add.html.twig', [
