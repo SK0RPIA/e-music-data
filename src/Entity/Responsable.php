@@ -18,7 +18,7 @@ class Responsable extends User
     #[ORM\OneToMany(mappedBy: 'responsable', targetEntity: Enfant::class, orphanRemoval: true)]
     private Collection $enfants;
 
-    #[ORM\Column]
+    #[ORM\Column(options: ['default' => 0])]
     private ?bool $valide = null;
 
     public function __construct()
@@ -72,5 +72,4 @@ class Responsable extends User
 
         return $this;
     }
-
 }
