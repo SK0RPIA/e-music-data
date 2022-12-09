@@ -5,6 +5,16 @@
 {% endblock %}
 
 {% block body %}
+
+<style>
+  .column{
+    display: flex;
+    flex-direction: column;
+  }
+</style>
+  <div class="column">
     <a href="{{ path('app_logout') }}">Se deconnecter</a>
     <a href="{{ path('app_delaccount') }}">Supprimer son compte</a>
+    <a href="{{ path('app_listenfant') }}">Voir les comptes de ses enfants</a>
+  </div>
 {% endblock %}
