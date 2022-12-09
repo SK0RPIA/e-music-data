@@ -21,15 +21,13 @@
       display: flex;
       flex-direction: row;
     }
+    th,
+    td {
+      border: solid 1px black;
+    }
   </style>
 
   <div class="example-wrapper">
-    {% for user in users %}
-      <div class="row">
-        <div class="text-black">Nom : {{ user.nom }} ;</div>
-        <div class="text-black">Prenom : {{ user.prenom }} ;</div>
-        <div class="text-black">Mail : {{ user.email }}</div>
-      </div>
-    {% endfor %}
+    <div>User : {{ user.nom }} {{ user.prenom }}</div>
   </div>
 {% endblock %}

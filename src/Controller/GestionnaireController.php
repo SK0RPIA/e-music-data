@@ -2,8 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\Enfant;
 use App\Entity\Gestionnaire;
+use App\Entity\Responsable;
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -20,6 +25,45 @@ class GestionnaireController extends AbstractController
 
         return $this->render('gestionnaire/index.html.twig', [
             'controller_name' => 'GestionnaireController',
+        ]);
+    }
+
+
+
+    #[Route('/gestion/view-users', name: 'app_gestionnaireviewusers')]
+    public function viewUsers(EntityManagerInterface $entity): Response
+    {
+        if (!$this->getUser() instanceof Gestionnaire) {
+            return $this->redirectToRoute('app_index');
+        }
+        $users =  $entity->getRepository(Responsable::class)->findAll();
+        foreach ($entity->getRepository(Enfant::class)->findAll() as $kid) {
+            array_push($users, $kid);
+        }
+
+        return $this->render('gestionnaire/viewusers.html.twig', [
+            'users' => $users
+        ]);
+    }
+
+    #[Route('/gestion/view-user', name: 'app_gestionnaireviewuser')]
+    public function viewUser(Request $request, EntityManagerInterface $entity): Response
+    {
+        if (!$this->getUser() instanceof Gestionnaire) {
+            return $this->redirectToRoute('app_index');
+        }
+
+        $mail = $request->query->get('email');
+
+        $users =  $entity->getRepository(User::class)->findBy(['email' => $mail]);
+        if (sizeof($users) < 1) {
+            return $this->redirectToRoute('app_index');
+        }
+        $user = $users[0];
+
+
+        return $this->render('gestionnaire/viewuser.html.twig', [
+            'user' => $user
         ]);
     }
 }
