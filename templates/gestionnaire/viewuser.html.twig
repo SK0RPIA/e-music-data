@@ -25,9 +25,12 @@
     td {
       border: solid 1px black;
     }
-    .row{
+    .ligne{
       display: flex;
       flex-direction: row;
+    }
+    .cours-del{
+      margin-left: 25px;
     }
   </style>
 
@@ -35,14 +38,14 @@
     <div>User : {{ user.nom }} {{ user.prenom }}</div>
 
     {% for cour in cours %}
-      <div class="row">
+      <div class="ligne">
         <div class="cours">Inscrit au : {{ cour.libelle }}</div>
-        <div class="cours-del"><a href="/gestion/del-cour-user?email={{user.email}}&courid={{cour.id }}"><button>Retirer</button></div></a>
+        <div class="cours-del"><a href="/gestion/del-cour-user?email={{user.email}}&courid={{cour.id }}"><button class="btn btn-primary">Retirer</button></div></a>
       </div>
     {% endfor %}
     {{ form_start(form) }}
     {{ form_widget(form) }}
-    <button type="submit">Valider</button>
+    <button class="btn btn-primary" type="submit">Valider</button>
     {{ form_end(form) }}
   </div>
 {% endblock %}
