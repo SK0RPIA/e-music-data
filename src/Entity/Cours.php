@@ -49,9 +49,13 @@ class Cours
     #[ORM\JoinColumn(nullable: false)]
     private ?TypeDeCours $typeDeCours = null;
 
+    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'cours')]
+    private Collection $users;
+
     public function __construct()
     {
         $this->jour = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
 
@@ -188,6 +192,30 @@ class Cours
     public function setTypeDeCours(?TypeDeCours $typeDeCours): self
     {
         $this->typeDeCours = $typeDeCours;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->users->contains($user)) {
+            $this->users->add($user);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        $this->users->removeElement($user);
 
         return $this;
     }

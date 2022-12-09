@@ -25,9 +25,24 @@
     td {
       border: solid 1px black;
     }
+    .row{
+      display: flex;
+      flex-direction: row;
+    }
   </style>
 
   <div class="example-wrapper">
     <div>User : {{ user.nom }} {{ user.prenom }}</div>
+
+    {% for cour in cours %}
+      <div class="row">
+        <div class="cours">Inscrit au : {{ cour.libelle }}</div>
+        <div class="cours-del"><a href="/gestion/del-cour-user?email={{user.email}}&courid={{cour.id }}"><button>Retirer</button></div></a>
+      </div>
+    {% endfor %}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button type="submit">Valider</button>
+    {{ form_end(form) }}
   </div>
 {% endblock %}
