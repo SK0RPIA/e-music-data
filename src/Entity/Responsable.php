@@ -18,6 +18,9 @@ class Responsable extends User
     #[ORM\OneToMany(mappedBy: 'responsable', targetEntity: Enfant::class, orphanRemoval: true)]
     private Collection $enfants;
 
+    #[ORM\Column]
+    private ?bool $valide = null;
+
     public function __construct()
     {
         $this->enfants = new ArrayCollection();
@@ -54,6 +57,18 @@ class Responsable extends User
                 $enfant->setResponsable(null);
             }
         }
+
+        return $this;
+    }
+
+    public function isValide(): ?bool
+    {
+        return $this->valide;
+    }
+
+    public function setValide(bool $valide): self
+    {
+        $this->valide = $valide;
 
         return $this;
     }
