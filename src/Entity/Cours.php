@@ -36,7 +36,7 @@ class Cours
 
     #[ORM\ManyToOne(inversedBy: 'cours')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Instrument $instrument = null;
+    private ?TypeInstrument $instrument = null;
 
     #[ORM\ManyToOne(inversedBy: 'cours')]
     #[ORM\JoinColumn(nullable: false)]
@@ -49,9 +49,13 @@ class Cours
     #[ORM\JoinColumn(nullable: false)]
     private ?TypeDeCours $typeDeCours = null;
 
+    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'cours')]
+    private Collection $users;
+
     public function __construct()
     {
         $this->jour = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
 
@@ -132,12 +136,12 @@ class Cours
         return $this;
     }
 
-    public function getInstrument(): ?Instrument
+    public function getInstrument(): ?TypeInstrument
     {
         return $this->instrument;
     }
 
-    public function setInstrument(?Instrument $instrument): self
+    public function setInstrument(?TypeInstrument $instrument): self
     {
         $this->instrument = $instrument;
 
@@ -188,6 +192,30 @@ class Cours
     public function setTypeDeCours(?TypeDeCours $typeDeCours): self
     {
         $this->typeDeCours = $typeDeCours;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->users->contains($user)) {
+            $this->users->add($user);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        $this->users->removeElement($user);
 
         return $this;
     }

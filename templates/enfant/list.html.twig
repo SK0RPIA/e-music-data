@@ -26,19 +26,31 @@
       display: flex;
       flex-direction: row;
     }
+    
+    th,
+    td {
+      border: solid 1px black;
+    }
   </style>
 
   <div class="example-wrapper">
     <span>Liste des comptes de ses Enfants</span>
 
     <div class="list-enfants">
-      {% for enfant in enfants %}
-        <div class="row-kid">
-          <div>Prenom : {{ enfant.prenom }} ;</div>
-          <div>Nom : {{ enfant.nom }} ;</div>
-        </div>
-      {% endfor %}
-
+      <table>
+        <tbody>
+          <th>Nom</th>
+          <th>Prenom</th>
+          <th>Email</th>
+          {% for enfant in enfants %}
+            <tr>
+              <td>{{ enfant.prenom }}</td>
+              <td>{{ enfant.nom }}</td>
+              <td>{{ enfant.email }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
       <a href="/enfant/add"><button class="btn btn-danger" id="ajouter-enfant" type="submit">Ajouter un enfant</button></a>
     </div>
   </div>

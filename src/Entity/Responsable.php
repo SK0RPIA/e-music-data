@@ -24,6 +24,7 @@ class Responsable extends User
     public function __construct()
     {
         $this->enfants = new ArrayCollection();
+        $this->valide = false;
     }
 
     public function getId(): ?int
