@@ -16,19 +16,25 @@
       background: #f5f5f5;
       padding: 2px 6px;
     }
-
-    .list-enfants{
-        background: orange;
+    
+    .list-enfants {
+      background: orange;
     }
   </style>
 
   <div class="example-wrapper">
     <span>Responsable : {{ user.prenom }} {{ user.nom }}</span>
 
-    <div class="list-enfants">
-      {% for enfant in enfants %}
-        {{ enfant.prenom }}
-      {% endfor %}
+    <div class="">
+      {{ form_start(form, {'attr': {'class': 'register-form py-5 w-100'}})}}
+      {{ form_row(form.email, {'attr': {'class': 'input-material'}}) }}
+      {{ form_row(form.Nom, {'attr': {'class': 'input-material'}}) }}
+      {{ form_row(form.Prenom, {'attr': {'class': 'input-material'}}) }}
+      {{ form_row(form.DateNaiss, {'attr': {'class': 'input-material'}}) }}
+      {{ form_row(form.plainPassword, { label: 'Password', 'attr': {'class': 'input-material'}}) }}
+
+      <button class="btn btn-danger" id="ajoute-enfant" type="submit">Ajouter</button>
+      {{ form_end(form) }}
     </div>
   </div>
 {% endblock %}

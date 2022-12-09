@@ -16,9 +16,15 @@
       background: #f5f5f5;
       padding: 2px 6px;
     }
-
-    .list-enfants{
-        background: orange;
+    
+    .list-enfants {
+      background: orange;
+      display: flex;
+      flex-direction: column;
+    }
+    .row-kid {
+      display: flex;
+      flex-direction: row;
     }
   </style>
 
@@ -27,8 +33,13 @@
 
     <div class="list-enfants">
       {% for enfant in enfants %}
-        {{ enfant.prenom }}
+        <div class="row-kid">
+          <div>Prenom : {{ enfant.prenom }} ;</div>
+          <div>Nom : {{ enfant.nom }} ;</div>
+        </div>
       {% endfor %}
+
+      <a href="/enfant/add"><button class="btn btn-danger" id="ajouter-enfant" type="submit">Ajouter un enfant</button></a>
     </div>
   </div>
 {% endblock %}
