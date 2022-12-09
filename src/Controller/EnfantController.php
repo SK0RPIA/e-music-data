@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Enfant;
+use App\Entity\Responsable;
 use App\Form\EnfantFormType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -39,7 +40,7 @@ class EnfantController extends AbstractController
     public function add(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
 
-        if (!$this->getUser()) {
+        if (!$this->getUser() || !$this->getUser() instanceof Responsable) {
             return $this->redirect('app_index');
         }
         $user = $this->getUser();
@@ -49,6 +50,15 @@ class EnfantController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            if (!$user->isValide()) {
+                return $this->render('enfant/add.html.twig', [
+                    'user' => $user,
+                    'form' => $form->createView(),
+                    'message' => "Votre compte n'as pas était valider par le gestionnaire !"
+
+                ]);
+            }
             // encode the plain password
             $enfant->setPassword(
                 $userPasswordHasher->hashPassword(
@@ -58,6 +68,8 @@ class EnfantController extends AbstractController
             );
 
             $enfant->setResponsable($user);
+
+            $enfant->setEmail($user->getNom() . '.' . $enfant->getPrenom(). '@e-music.com');
 
             $entityManager->persist($enfant);
             $entityManager->flush();            // generate a signed url and email it to the user

@@ -7,7 +7,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: GestionnaireRepository::class)]
-class Gestionnaire
+class Gestionnaire extends User
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

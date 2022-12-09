@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Responsable;
 use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -13,12 +14,20 @@ class AccueilInscritController extends AbstractController
     #[Route('/accueil', name: 'app_accueil_inscrit')]
     public function index(): Response
     {
-        if ($this->getUser()) {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('app_index', []);
+        }
+
+        if ($this->getUser() instanceof Responsable) {
             return $this->render('accueil_inscrit/index.html.twig', [
-                'user' => $this->getUser()
+                'user' => $this->getUser(),
+                'isresponsable' => true,
+            ]);
+        } else {
+            return $this->render('accueil_inscrit/index.html.twig', [
+                'user' => $this->getUser(),
             ]);
         }
-        return $this->render('accueil_inscrit/index.html.twig', []);
     }
 
 

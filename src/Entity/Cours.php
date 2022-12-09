@@ -36,7 +36,7 @@ class Cours
 
     #[ORM\ManyToOne(inversedBy: 'cours')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Instrument $instrument = null;
+    private ?TypeInstrument $instrument = null;
 
     #[ORM\ManyToOne(inversedBy: 'cours')]
     #[ORM\JoinColumn(nullable: false)]
@@ -132,12 +132,12 @@ class Cours
         return $this;
     }
 
-    public function getInstrument(): ?Instrument
+    public function getInstrument(): ?TypeInstrument
     {
         return $this->instrument;
     }
 
-    public function setInstrument(?Instrument $instrument): self
+    public function setInstrument(?TypeInstrument $instrument): self
     {
         $this->instrument = $instrument;
 

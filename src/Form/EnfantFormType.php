@@ -19,7 +19,6 @@ class EnfantFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('email', TextType::class, array('required' => true, 'label' => 'Email '))
             ->add('Nom', TextType::class, array('required' => true, 'label' => 'Nom '))
             ->add('Prenom', TextType::class, array('required' => true, 'label' => 'Prenom'))
             ->add('DateNaiss', DateTimeType::class, array('input' => 'datetime', 'widget' => 'single_text', 'required' => true, 'label' => 'Date de naissance', 'placeholder' => 'jj/mm/aaaa'))

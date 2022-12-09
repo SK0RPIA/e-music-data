@@ -1,3 +1,4 @@
+{% extends 'base.html.twig' %}
 {% block title %}
   Register
 {% endblock %}
@@ -19,4 +20,9 @@
 
   <button type="submit" class="btn">Register</button>
   {{ form_end(form) }}
+
+  <div class="already-register">
+    <div>Déjà un compte ?</div>
+    <a href="/login">Se connecter</a>
+  </div>
 {% endblock %}
