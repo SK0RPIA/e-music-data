@@ -51,10 +51,8 @@ class GestionnaireController extends AbstractController
            'form' => $form->createView(),
        ]);
        $account = new Account();
-$account->setEmail($data['email']);
-$account->setPassword($data['password']);
-// ... affectation des autres champs du formulaire à l'objet Account
-
-$accountRepository->save($account);
+        $account->setEmail($data['email']);
+        $account->setPassword($data['password']);
+        $accountRepository->save($account);
    }
 }
