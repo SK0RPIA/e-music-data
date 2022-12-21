@@ -44,4 +44,7 @@ class CoursController extends AbstractController
         $cours = $doctrine ->getRepository (Cours :: class) -> find ($idCours);
         return $this->render('cours/consulter.html.twig',['cours' => $cours,]);
     }
+
+   
+
 }
