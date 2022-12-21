@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Hello EnfantController!
+{% endblock %}
+
+{% block body %}
+  <style>
+    .example-wrapper {
+      margin: 1em auto;
+      max-width: 800px;
+      width: 95%;
+      font: 18px/1.5 sans-serif;
+    }
+    .example-wrapper code {
+      background: #f5f5f5;
+      padding: 2px 6px;
+    }
+    
+    .list-enfants {
+      background: orange;
+      display: flex;
+      flex-direction: column;
+    }
+    .row-kid {
+      display: flex;
+      flex-direction: row;
+    }
+    
+    th,
+    td {
+      border: solid 1px black;
+    }
+  </style>
+
+  <div class="example-wrapper">
+    <span>Liste des comptes de ses Enfants</span>
+
+    <div class="list-enfants">
+      <table>
+        <tbody>
+          <th>Nom</th>
+          <th>Prenom</th>
+          <th>Email</th>
+          {% for enfant in enfants %}
+            <tr>
+              <td>{{ enfant.prenom }}</td>
+              <td>{{ enfant.nom }}</td>
+              <td>{{ enfant.email }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <a href="/enfant/add"><button class="btn btn-danger" id="ajouter-enfant" type="submit">Ajouter un enfant</button></a>
+    </div>
+  </div>
+{% endblock %}

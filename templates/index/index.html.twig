@@ -1,0 +1,185 @@
+{% extends 'base.html.twig' %}
+  {% block body %}
+
+    <div class="modal fade" id="listingModal" tabindex="-1" role="dialog" aria-labelledby="listingModal" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header px-lg-5">
+            <h5 class="modal-title" id="listingModalLabel">Incription/Connexion</h5>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body px-lg-5">
+            <form action="#!">
+              <div class="row gy-3">
+                <div class="col-lg-6">
+                  <label class="form-label" for="fullName">Full name</label>
+                  <input class="form-control" id="fullName" type="text" name="fullname" placeholder="Your full name">
+                </div>
+                <div class="col-lg-6">
+                  <label class="form-label" for="email">Email Address</label>
+                  <input class="form-control" id="email" type="email" name="email" placeholder="Your email address">
+                </div>
+                <div class="col-lg-6">
+                  <label class="form-label" for="fullName">Listing Type</label>
+                  <select class="choices" data-customclass="form-control">
+                    <option value>Choose listing type</option>
+                    <option value="tool">Tool</option>
+                    <option value="resource">Resource</option>
+                  </select>
+                </div>
+                <div class="col-lg-6">
+                  <label class="form-label" for="istingTitle">Listing title</label>
+                  <input class="form-control" id="istingTitle" type="text" name="listing-title" placeholder="Title of your title">
+                </div>
+                <div class="col-lg-6">
+                  <label class="form-label" for="listingUrl">Listing URL</label>
+                  <input class="form-control" id="listingUrl" type="text" name="listing-url" placeholder="Listing website url">
+                </div>
+                <div class="col-lg-6">
+                  <label class="form-label" for="listingCategory">Listing category</label>
+                  <select class="choices" data-customclass="form-control">
+                    <option value>Choose category</option>
+                    <option value="marketing">Marketing </option>
+                    <option value="idea generation">Idea generation </option>
+                    <option value="design">Design </option>
+                    <option value="naming">Naming </option>
+                    <option value="domain names">Domain names </option>
+                    <option value="sales">Sales </option>
+                    <option value="finance">Finance </option>
+                    <option value="project management">Project management </option>
+                    <option value="hosting">Hosting </option>
+                    <option value="social tools">Social tools </option>
+                  </select>
+                </div>
+                <div class="col-lg-12">
+                  <label class="form-label" for="listingDescription">Listing description</label>
+                  <textarea class="form-control" id="listingDescription" name="listing-description" rows="5" placeholder="Add a small brief about your listing."></textarea>
+                </div>
+                <div class="col-lg-6 mb-lg-0">
+                  <label class="form-label" for="listingThumb">Listing thumbnail</label>
+                  <input class="form-control" id="listingThumb" type="file" name="listing-thumb">
+                </div>
+                <div class="col-lg-6 mb-lg-0">
+                  <label class="form-label" for="listingCover">Listing cover</label>
+                  <input class="form-control" id="listingCover" type="file" name="listing-cover">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer justify-content-start px-lg-5">
+            <button class="btn btn-primary" type="submit">Submit listing</button>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Hero section-->
+    <section class="hero-home py-5">
+      <div class="container pt-5">
+        <div class="row">
+          <div class="col-lg-7 mx-auto text-center">
+            <p class="h6 text-uppercase text-primary mb-3">Bienvenue sur </p>
+            <h1 class="mb-5">E-music</h1>
+            
+
+            {% if message is defined %}
+
+              <div class="text-uppercase text-primary mb-3">{{ message }}</div>
+
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Features section-->
+    <section class="py-5">
+     
+        <div class="row text-center">
+          <div class="col-lg-10 mx-auto">
+            <div class="card border-0 shadow">
+             
+                <div class="row gy-4">
+                  
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+       
+    </section>
+    <!-- Essential tools-->
+    <section class="pb-5">
+      <div class="container pb-5">
+       
+        <div class="row text-center align-items-stretch gy-4">
+          <div class="col-lg-4">
+            <div class="card border-0 shadow h-100 hover-transition">
+              <div class="card-body p-4 p-lg-5">
+                <div class="essential-tool-img mb-4 mx-auto" style="background: url(img/tool-1.png)"></div>
+                <h3 class="h5">Notre école</h3>
+                <p class="text-sm text-muted mb-0">Dotée de locaux de qualité, l’école de musique dispose d’une équipe pédagogique de seize enseignants
+                  et propose au public différentes prestations d'enseignement musical.Cours particulier ou collectifs.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card border-0 shadow h-100 hover-transition">
+              <div class="card-body p-4 p-lg-5">
+                <div class="essential-tool-img mb-4 mx-auto" style="background: url(img/tool-2.png)"></div>
+                <a href="./index/cours"><h3 class="h5">Cours proposés</h3></a>
+                <p class="text-sm text-muted mb-0"><table class="customTable">
+                  <thead>
+                    <tr>
+                      <th colspan="2">Nos Cours</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Row 1, Cell 1</td>
+                      <td>Row 1, Cell 2</td>
+                    </tr>
+                    <tr>
+                      <td>Row 2, Cell 1</td>
+                      <td>Row 2, Cell 2</td>
+                    </tr>
+                    <tr>
+                      <td>Row 3, Cell 1</td>
+                      <td>Row 3, Cell 2</td>
+                    </tr>
+                    <tr>
+                      <td>Row 4, Cell 1</td>
+                      <td>Row 4, Cell 2</td>
+                    </tr>
+                  </tbody>
+                </table></p>
+      
+                
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card border-0 shadow h-100 hover-transition">
+              <div class="card-body p-4 p-lg-5">
+                <div class="essential-tool-img mb-4 mx-auto" style="background: url(img/tool-3.png)"></div>
+                <h3 class="h5">Modalités d'Inscription</a></h3>
+                <p class="text-sm text-muted mb-0">Ouverte à tous, enfants, adolescents, adultes, elle a pour vocation l'apprentissage de la musique.Pour vous inscrire il suffit de créer un compte est choisir les cours qui vous intéresse.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Categories section-->
+    
+    <!-- Resources section-->
+    
+    <!-- Blog Section-->
+    
+    <!-- Newsletter section-->
+    
+
+    <!-- JavaScript files-->
+    
+    <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+  {% endblock %}
