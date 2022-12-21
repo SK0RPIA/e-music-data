@@ -2,46 +2,36 @@
 
 namespace App\Controller;
 
-use App\Entity\Cours;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Form\CoursType;
-use Symfony\Component\HttpFoundation\Request;
-use Doctrine\Persistence\ManagerRegistry;
+use App\Entity\Responsable;
+use App\Form\CreateResponsableType;
 
-class CoursController extends AbstractController
+class GestionnaireController extends AbstractController
 {
-    #[Route('/cours', name: 'app_cours')]
+    #[Route('/gestionnaire', name: 'app_gestionnaire')]
     public function index(): Response
     {
-        return $this->render('cours/ajouter.html.twig', [
-            'controller_name' => 'CoursController',
+        return $this->render('gestionnaire/index.html.twig', [
+            'controller_name' => 'GestionnaireController',
         ]);
     }
 
-
-    #[Route('/ajoutercours', name: 'app_cours')]
-    public function ajouterCours(Request $request, ManagerRegistry $doctrine)
+    public function addResponsable(Request $request, ManagerRegistry $doctrine)
     {
 
-        $cours = new cours();
-        $form = $this->createForm(CoursType::class, $cours);
+        $responsable = new Responsable();
+        $form = $this->createForm(CreateResponsableType::class, $responsable);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $cours = $form->getData();
+            $responsable = $form->getData();
             $entityManager = $doctrine->getManager();
-            $entityManager->persist($cours);
+            $entityManager->persist($responsable);
             $entityManager->flush();
-            return $this->render('cours/consulter.html.twig', ['cours' => $cours,]);
+            return $this->render('responsable/form.html.twig', ['responsable' => $responsable,]);
         } else {
-            return $this->render('cours/ajouter.html.twig', array('form' => $form->createView(),));
+            return $this->render('responsable/form.html.twig', array('form' => $form->createView(),));
         }
-    }
-
-    public function consulterCours(ManagerRegistry $doctrine,$idCours): Response
-    {
-        $cours = $doctrine ->getRepository (Cours :: class) -> find ($idCours);
-        return $this->render('cours/consulter.html.twig',['cours' => $cours,]);
     }
 }
