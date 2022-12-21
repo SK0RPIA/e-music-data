@@ -15,6 +15,9 @@ class Cours
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
+    #[ORM\Column(type: integer)]
+    private $duration;
+
 
     #[ORM\Column(length: 70)]
     private ?string $libelle = null;
@@ -128,6 +131,18 @@ class Cours
     public function setHeureFin(\DateTimeInterface $heureFin): self
     {
         $this->heureFin = $heureFin;
+
+        return $this;
+    }
+
+    public function getDuration(): ?int
+    {
+        return $this->duration;
+    }
+
+    public function setDuration(int $duration): self
+    {
+        $this->duration = $duration;
 
         return $this;
     }

@@ -13,7 +13,7 @@
         <tr><td>Intitulé du cour : </td><td>{{cours.libelle}}</td></tr>
         <tr><td>Age minimum d'inscription : </td><td>{{cours.ageMini}}</td>
         <tr><td>Age maximum d'inscription : </td><td>{{cours.ageMaxi}}</td>
-        <tr><td>Jour(s) du cours : 
+        <tr><td>Jour(s) du cour : 
 
         {% for j in cours.jour %}
         
@@ -23,6 +23,7 @@
         </td></tr>
         <tr><td>Le cours débutera à : </td><td>{{cours.heureDebut|date("h:i A")}}</td>
         <tr><td>Le cours se terminera à : </td><td>{{cours.heureFin|date("h:i A")}}</td>
+        <tr><td>Le cours durera : </td><td>{{course.duration|date("h:i A")}}</td>
         <tr><td>Professeur : </td><td>{{cours.professeur.nom}}{{cours.professeur.prenom}}</td></tr>
         <tr><td>Instrument : </td><td>{{cours.instrument.intitule}}</td></tr>
         <tr><td>Nombre de places : </td><td>{{cours.nbplaces}}</td></tr>

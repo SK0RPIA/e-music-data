@@ -51,4 +51,16 @@ class CoursController extends AbstractController
         'cours' => $cours]);
     
         }
+
+        public function calculateCourseDuration(Cours $cours)
+        {
+            $startTimestamp = strtotime($cours->getStartTime());
+            $endTimestamp = strtotime($cours->getEndTime());
+            $duration = $endTimestamp - $startTimestamp;
+        
+            $cours->setDuration($duration);
+        
+            return $duration;
+        }
 }
+
