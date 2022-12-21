@@ -34,4 +34,27 @@ class GestionnaireController extends AbstractController
             return $this->render('responsable/form.html.twig', array('form' => $form->createView(),));
         }
     }
+
+     #[Route('/gestionnaire/create-account', name:'create_account')]
+    
+   public function createAccount(Request $request)
+   {
+       $form = $this->createForm(AccountType::class);
+   
+       $form->handleRequest($request);
+       if ($form->isSubmitted() && $form->isValid()) {
+           $data = $form->getData();
+           
+       }
+   
+       return $this->render('gestionnaire/create_account.html.twig', [
+           'form' => $form->createView(),
+       ]);
+       $account = new Account();
+$account->setEmail($data['email']);
+$account->setPassword($data['password']);
+// ... affectation des autres champs du formulaire à l'objet Account
+
+$accountRepository->save($account);
+   }
 }
