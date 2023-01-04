@@ -44,4 +44,23 @@ class CoursController extends AbstractController
         $cours = $doctrine ->getRepository (Cours :: class) -> find ($idCours);
         return $this->render('cours/consulter.html.twig',['cours' => $cours,]);
     }
+    public function listerCours(ManagerRegistry $doctrine){
+        $repository =  $doctrine ->getRepository (Cours::class);
+        $cours = $repository->findAll();
+        return $this->render('cours/listerCours.html.twig', [
+        'cours' => $cours]);
+    
+        }
+
+        public function calculateCourseDuration(Cours $cours)
+        {
+            $startTimestamp = strtotime($cours->getStartTime());
+            $endTimestamp = strtotime($cours->getEndTime());
+            $duration = $endTimestamp - $startTimestamp;
+        
+            $cours->setDuration($duration);
+        
+            return $duration;
+        }
 }
+

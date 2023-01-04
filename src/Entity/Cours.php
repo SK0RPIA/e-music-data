@@ -34,6 +34,10 @@ class Cours
     #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTimeInterface $heureFin = null;
 
+     #[ORM\Column(type: integer)]
+    
+   private ?\DateTimeInterface $duration = null;
+
     #[ORM\ManyToOne(inversedBy: 'cours')]
     #[ORM\JoinColumn(nullable: false)]
     private ?TypeInstrument $instrument = null;
@@ -144,6 +148,17 @@ class Cours
     public function setInstrument(?TypeInstrument $instrument): self
     {
         $this->instrument = $instrument;
+
+        return $this;
+    }
+    public function getDuration(): ?int
+    {
+        return $this->duration;
+    }
+
+    public function setDuration(int $duration): self
+    {
+        $this->duration = $duration;
 
         return $this;
     }
