@@ -1,0 +1,43 @@
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Directory | Bootstrap 5 listing template</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="all,follow" />
+  <!-- Choices CSS -->
+  <link rel="stylesheet" href="/vendor/choices.js/public/assets/styles/choices.min.css" />
+  <!-- Swiper slider -->
+  <link rel="stylesheet" href="/vendor/swiper/swiper-bundle.min.css" />
+  <!-- Google fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700&amp;display=swap" />
+  <!-- Lightbox -->
+  <link rel="stylesheet" href="/vendor/glightbox/css/glightbox.min.css" />
+  <!-- theme stylesheet -->
+  <link rel="stylesheet" href="/css/style.default.css" id="theme-stylesheet" />
+  <!-- Custom stylesheet - for your changes -->
+  <link rel="stylesheet" href="/css/custom.css" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="img/logo.svg" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+</head>
+
+<header class="header">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 py-lg-2">
+    <div class="container">
+      <a class="navbar-brand py-3 d-flex align-items-center" href="/"><img src="img/logo.svg" alt="" width="30" /><span class="text-uppercase text-small fw-bold text-dark ms-2 mb-0">E-Music</span></a>
+      <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item ms-lg-2 py-2 py-lg-0">
+            {% if user is defined %}
+              <a class="btn btn-primary" href="/accueil" data-bs-toggle="modal">Mon Compte</a>
+            {% else %}
+              <a class="btn btn-primary" href="/inscription" data-bs-toggle="modal">Inscription/connexion</a>
+            {% endif %}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

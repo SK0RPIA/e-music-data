@@ -1,47 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Directory | Bootstrap 5 listing template</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="all,follow">
-    <!-- Choices CSS-->
-    <link rel="stylesheet" href="vendor/choices.js/public/assets/styles/choices.min.css">
-    <!-- Swiper slider-->
-    <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css">
-    <!-- Google fonts-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700&amp;display=swap">
-    <!-- Lightbox-->
-    <link rel="stylesheet" href="vendor/glightbox/css/glightbox.min.css">
-    <!-- theme stylesheet-->
-    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
-    <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="css/custom.css">
-    <!-- Favicon-->
-    <link rel="shortcut icon" href="img/logo.svg">
-  </head>
-  <body>
+{% extends 'base.html.twig' %}
   {% block body %}
-    <!-- navbar-->
-    <header class="header">
-      <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 py-lg-2">
-        <div class="container"><a class="navbar-brand py-3 d-flex align-items-center" href="index.html"><img src="img/logo.svg" alt="" width="30"><span class="text-uppercase text-small fw-bold text-dark ms-2 mb-0">E-Music</span></a>
-          <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto">
-              
-              
-              
-              
-              <li class="nav-item ms-lg-2 py-2 py-lg-0"><a class="btn btn-primary" href="./inscription" data-bs-toggle="modal">Inscription/connexion</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <!--  Modal -->
+
     <div class="modal fade" id="listingModal" tabindex="-1" role="dialog" aria-labelledby="listingModal" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -122,6 +81,12 @@
             <p class="h6 text-uppercase text-primary mb-3">Bienvenue sur </p>
             <h1 class="mb-5">E-music</h1>
             
+
+            {% if message is defined %}
+
+              <div class="text-uppercase text-primary mb-3">{{ message }}</div>
+
+            {% endif %}
           </div>
         </div>
       </div>
@@ -151,7 +116,7 @@
             <div class="card border-0 shadow h-100 hover-transition">
               <div class="card-body p-4 p-lg-5">
                 <div class="essential-tool-img mb-4 mx-auto" style="background: url(img/tool-1.png)"></div>
-                <h3 class="h5">Notre école</a></h3>
+                <h3 class="h5">Notre école</h3>
                 <p class="text-sm text-muted mb-0">Dotée de locaux de qualité, l’école de musique dispose d’une équipe pédagogique de seize enseignants
                   et propose au public différentes prestations d'enseignement musical.Cours particulier ou collectifs.</p>
               </div>
@@ -213,59 +178,8 @@
     
     <!-- Newsletter section-->
     
-    <footer style="background: #111;">
-      <div class="container py-4">
-        <div class="row py-5 gy-3">
-          <div class="col-md-4 col-sm-12">
-            <div class="d-flex align-items-center mb-3"><img src="img/logo-footer.svg" alt="" width="30"><span class="text-uppercase text-sm fw-bold text-white ms-2">Listings</span></div>
-            <p class="text-muted text-sm fw-light mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-            <ul class="list-inline mb-0 text-white">
-            </ul>
-          </div>
-          <div class="col-md-4 col-sm-6">
-            <h6 class="pt-2 text-white">Useful links</h6>
-            <div class="d-flex flex-wrap">
-              <ul class="list-unstyled text-muted mb-0 mb-3 me-4">
-                <li><a class="reset-anchor text-sm" href="#!">Tools</a></li>
-                <li><a class="reset-anchor text-sm" href="#!">Resources</a></li>
-                <li><a class="reset-anchor text-sm" href="#!">About us</a></li>
-                <li><a class="reset-anchor text-sm" href="#!">Write to us</a></li>
-              </ul>
-              <ul class="list-unstyled text-muted mb-0">
-                <li><a class="reset-anchor text-sm" href="#!">Privacy Policy </a></li>
-                <li><a class="reset-anchor text-sm" href="#!">Cookie Policy</a></li>
-                <li><a class="reset-anchor text-sm" href="#!">Terms &amp; Conditions</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6">
-            <h6 class="pt-2 text-white">Newsletter</h6>
-            <p class="text-muted text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-            <form action="">
-              <div class="input-group">
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="copyrights py-4" style="background: #0e0e0e">
-        <div class="container">
-          <div class="row text-center gy-2">
-            <div class="col-sm-6 text-lg-start">
-              <p class="mb-0 text-muted mb-0 text-sm">&copy; 2021 All rights reserved.</p>
-            </div>
-            <div class="col-sm-6 text-md-end">
-              <p class="mb-0 text-muted mb-0 text-sm">Template designed by <a class="reset-anchor text-primary" href="https://bootstrapious.com/p/listings-bootstrap-directory-theme">Bootstrapious</a>.</p>
-              <!-- If you want to remove the backlink, please purchase the Attribution-Free License.-->
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+
     <!-- JavaScript files-->
     
     <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   {% endblock %}
-  </body>
-</html>
