@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+
 use App\Entity\Cours;
 use App\Entity\Enfant;
 use App\Entity\Gestionnaire;
@@ -23,7 +24,6 @@ class GestionnaireController extends AbstractController
         if (!$this->getUser() instanceof Gestionnaire) {
             return $this->redirectToRoute('app_index');
         }
-
 
         return $this->render('gestionnaire/index.html.twig', [
             'controller_name' => 'GestionnaireController',
