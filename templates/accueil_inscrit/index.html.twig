@@ -19,3 +19,14 @@
     {% endif %}
   </div>
 {% endblock %}
+
+
+    <table>
+    <h1>Consulter la liste des cours inscrits</h1>
+    <a href="">Général</a>
+      {%for i in coursInscrits %} 
+      <a href="{{ path('app_listerInscrit'{'idInscrit':i.idInscrit}) }}"{{i.nom}}></a>
+      {% else %}
+      <a>Vous n'êtes inscrits a aucun cours</a>  
+    </table>
+    

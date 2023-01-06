@@ -9,12 +9,15 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Bienvenue sur votre espace personnel {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/xampp/htdocs/symfony/src/Controller/ResponsableController.php'|file_link(0) }}">src/Controller/ResponsableController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/xampp/htdocs/symfony/templates/responsable/index.html.twig'|file_link(0) }}">templates/responsable/index.html.twig</a></code></li>
-    </ul>
+     <table>
+    <h1>Consulter la liste des cours inscrits</h1>
+    <a href="">Général</a>
+      {%for i in coursInscrits %} 
+      <a href="{{ path('app_listeInscrit'{'idInscrit':i.idInscrit}) }}"{{i.nom}}></a>
+      {% else %}
+      <a>Vous n'êtes inscrits a aucun cours</a>  
+    </table>
 </div>
 {% endblock %}
