@@ -49,9 +49,13 @@ class Cours
     #[ORM\JoinColumn(nullable: false)]
     private ?TypeDeCours $typeDeCours = null;
 
+    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'cours')]
+    private Collection $participants;
+
     public function __construct()
     {
-        $this->jour = new ArrayCollection();
+        $this->jours = new ArrayCollection();
+        $this->participants = new ArrayCollection();
     }
 
 
@@ -166,8 +170,8 @@ class Cours
 
     public function addJour(Jour $jour): self
     {
-        if (!$this->jour->contains($jour)) {
-            $this->jour->add($jour);
+        if (!$this->jours->contains($jour)) {
+            $this->jours->add($jour);
         }
 
         return $this;
@@ -175,7 +179,7 @@ class Cours
 
     public function removeJour(Jour $jour): self
     {
-        $this->jour->removeElement($jour);
+        $this->jours->removeElement($jour);
 
         return $this;
     }
@@ -192,5 +196,35 @@ class Cours
         return $this;
     }
 
-    
+    /**
+     * @return Collection<int, User>
+     */
+    public function getParticipants(): Collection
+    {
+        return $this->participants;
+    }
+
+    public function addParticipant(User $participant): self
+    {
+        if (!$this->participants->contains($participant) && $this->verifAge($participant->getDateNaiss()) && sizeof($this->getParticipants()) - 1 < $this->getNbplaces()) {
+
+            $this->participants->add($participant);
+        }
+
+        return $this;
+    }
+
+    public function removeParticipant(User $participant): self
+    {
+        $this->participants->removeElement($participant);
+
+        return $this;
+    }
+
+
+    public function verifAge($birthday)
+    {
+        return true;
+        if ($birthday > $this->getAgemini() && $birthday < $this->getAgemaxi())  return true;
+    }
 }

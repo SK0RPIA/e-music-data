@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Selection Utilisateurs
+{% endblock %}
+
+{% block body %}
+  <style>
+    .center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .vers-cours {
+      display: flex;
+      flex-direction: row;
+    }
+  </style>
+  <h2>Cours de {{ cour.libelle }}</h2>
+  <div class="center">
+  <form action="/add/cours/confirm">
+ 
+        <input type="hidden" name="cours" value="{{cour.id }}" id="" ></input>
+
+    {% for user in users %}
+      <div class="vers-cours">
+        <h5>Prenom : {{ user.prenom }}</h5>
+        <input type="checkbox" name="{{ user.Id }}" id="" ></input>
+      </div>
+    {% endfor %}
+  <input type="submit"></input>
+</form>
+    
+  </div>
+{% endblock %}

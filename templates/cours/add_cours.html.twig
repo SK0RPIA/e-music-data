@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Selection Cours
+{% endblock %}
+
+{% block body %}
+  <style>
+    .center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .vers-cours {
+      display: flex;
+      flex-direction: row;
+    }
+  </style>
+  <div class="center">
+    {% for cour in cours %}
+      <div class="vers-cours">
+        <h5>Cours : {{ cour.libelle }}</h5>
+        <p>Places : {{ cour.nbplaces }}</p>
+        <a href="/add/cours/users?cours={{ cour.id }}"><button>Ajouter ce cours</button></a>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
